@@ -1,0 +1,102 @@
+{
+  "app_name": {
+    "message": "Google Chrome2Glass Extension",
+    "description": "Name of the application"
+  },
+  "context_menu_for_media": {
+    "message": "Send media to Glass",
+    "description": "Contextual menu item for audio, video and images"
+  },
+  "context_menu_for_selection": {
+    "message": "Send selection to Glass",
+    "description": "Contextual menu item for text selection"
+  },
+  "context_menu_for_link": {
+    "message": "Send link to Glass",
+    "description": "Contextual menu item for links"
+  },
+  "app_name_short": {
+    "message": "Chrome2Glass",
+    "description": "Short name of the application"
+  },
+  "app_desc": {
+    "message": "Google Chrome2Glass Extension enables you to send text, images and other information from Chrome to your Glass device.",
+    "description": "Description of the application."
+  },
+  "sending_message": {
+    "message": "Sending to Glass...",
+    "description": "Notice when link is being sent to glass."
+  },
+  "sent_message": {
+    "message": "Sent to Glass.",
+    "description": "Notice when link has been successfully sent to Glass."
+  },
+  "error_sending_message": {
+    "message": "Error sending to Glass: $details$",
+    "description": "Notice when link cannot be sent. $details$ is automatically replaced with the error text.",
+    "placeholders": {
+      "details": {
+        "content": "$1",
+        "example": "Failed to send message."
+      }
+    }
+  },
+  "sign_in_required_message": {
+    "message": "Please $link$ to Chrome2Glass.",
+    "description": "Notice when sign in is required. $link$ is automatically replaced with 'sign in'.",
+    "placeholders": {
+      "link": {
+        "content": "$1",
+        "example": "Sign in link."
+      }
+    }
+  },
+  "sign_in_message": {
+    "message": "sign in",
+    "description": "Sign in phrase used in the context of 'Please sign in to Chrome2Glass'."
+  },
+  "sign_out_message": {
+    "message": "Sign out",
+    "description": "Sign out link message."
+  }, 
+  "invalid_scheme_message": {
+    "message": "Only http or https pages supported.",
+    "description": "Notice when user attempt to send a file link."
+  },
+  "help_message": {
+    "message": "Help",
+    "description": "The help message."
+  },
+  "connectivity_error_message": {
+    "message": "Connection error.",
+    "description": "Error message when there is a connection error with the server."
+  },
+  "device_not_registered_message": {
+    "message": "Device not registered for user.",
+    "description": "Error message when we can't match a user to a device."
+  },
+  "about_title_message": {
+    "message": "About",
+    "description": "Section title in help."
+  },
+  "about_message": {
+    "message": "Chrome2Glass, from LunnLimited, enables you to send text, images and other information from Chrome to your Glass device. Chrome2Glass is comprised of a Chrome browser extension and a GlassWare application.",
+    "description": "About message in help."
+  },
+  "signed_in_message": {
+    "message": "Signed in. You are now ready to send links to your Glass.",
+    "description": "Signed in message."
+  },
+  "about_lunnlimited_message": {
+    "message": "About",
+    "description": "About."
+  },
+  "signed_out_title_message": {
+    "message": "Signed out",
+    "description": "Signed out section title."
+  },
+  "signed_out_message": {
+    "message": "You are now signed out of Chrome2Glass.",
+    "description": "Signed out message."
+  }
+}

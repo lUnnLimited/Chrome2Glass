@@ -1,0 +1,36 @@
+Chrome extension that allows easy transfer of text and media from Chrome to Glass
+
+Overview
+--------
+This extension was built by assembling pieces of 3 projects released by Google
+as example code:
+  * The oauth_contacts Chrome Extension (http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/extensions/oauth_contacts/)
+  * The ChromeToPhone Chrome Extension (https://code.google.com/p/chrometophone/source/browse/)
+  * The Mirror API QuickStart for Java (https://github.com/googleglass/mirror-quickstart-java)
+
+Architecture
+------------
+The App Engine component (deployed at https://chrome2glass.appspot.com/) is little more than a
+version of the QuickStart for Java with a few key differences:
+ * Authentication has been tweaked to support access via OAuth from the extension
+ * The UI has been stripped down to hide features not exposed by the extension
+ * The deployed version contains a private key for Mirror API access
+
+The extension authenticates to the App Engine server using OAuth for Installed Applications
+(http://code.google.com/apis/accounts/docs/OAuthForInstalledApps.html). This is distinct from
+the OAuth authentication performed by the App Engine server to perform "offline" access on the
+user's behalf to send content to the Mirror API. Both authententication flows are required for
+the extension to work correctly.
+
+Usage
+-----
+Step 1: Navigate to https://chrome2glass.appspot.com/ and complete the sign in flow to delegate
+access to your timeline.
+Step 2: Install the browser extension from the Chrome Web Store
+Step 3: Click on the extension's icon to sign in; note that you don't have to authorize the
+extension to access your timeline, that is handled on the server.
+Step 4: Right click on links, media or text selections to get a context menu that sends content
+to your Glass
+
+When signed in, clicking on the extension's icon opens a tab where you can see the last
+few items sent to Glass using this extension. It also allows you to sign out.
