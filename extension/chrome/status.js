@@ -11,7 +11,7 @@ function signOut () {
 document.addEventListener( 'DOMContentLoaded', function () {
   // Assign the sign out button's text and click handler
   var signOutButton = document.getElementById( 'sign_out' );
-  signOutButton.value = chrome.i18n.getMessage( 'sign_out_message' );
+  signOutButton.innerHTML = chrome.i18n.getMessage( 'sign_out_message' );
   signOutButton.addEventListener( 'click', signOut );
 
   // Set the src of the status iFrame to an OAuth sign URL determined by the background page
