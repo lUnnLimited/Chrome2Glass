@@ -55,8 +55,7 @@ function sendItem ( item ) {
 function openStatusPage () {
   oauth.authorize( function () {
     setIcon();
-    c2gUrl = oauth.signURL( c2gUrl, 'GET', {} );
-    chrome.tabs.create( { 'url' : 'status.html' } );
+    chrome.tabs.create( { 'url' : c2gUrl } );
   } );
 }
 
