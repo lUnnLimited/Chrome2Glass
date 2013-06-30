@@ -267,11 +267,11 @@ ChromeExOAuth.initCallbackPage = function() {
   var oauth = ChromeExOAuth.fromConfig(oauth_config);
   background_page.chromeExOAuthRedirectStarted = true;
   oauth.initOAuthFlow(function (token, secret) {
-    background_page.chromeExOAuthOnAuthorize(token, secret);
     background_page.chromeExOAuthRedirectStarted = false;
     chrome.tabs.getSelected(null, function (tab) {
       chrome.tabs.remove(tab.id);
     });
+    background_page.chromeExOAuthOnAuthorize(token, secret);
   });
 };
 
