@@ -61,6 +61,10 @@ public class NewUserBootstrapper {
     TimelineItem timelineItem = new TimelineItem();
     timelineItem.setText( "Welcome to Chrome 2 Glass");
     timelineItem.setNotification(new NotificationConfig().setLevel("DEFAULT"));
+    // Allow the user to remove the welcome message from their Timeline
+    List<MenuItem> menuItemList = new ArrayList<MenuItem>();
+    menuItemList.add(new MenuItem().setAction("DELETE"));
+    timelineItem.setMenuItems(menuItemList);
     TimelineItem insertedItem = MirrorClient.insertTimelineItem(credential, timelineItem);
     LOG.info("Bootstrapper inserted welcome message " + insertedItem.getId() + " for user "
         + userId);
