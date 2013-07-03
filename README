@@ -26,7 +26,7 @@ Usage
 -----
 Step 1: Navigate to https://chrome2glass.appspot.com/ and complete the sign in flow to delegate
 access to your timeline.
-Step 2: Install the browser extension from the Chrome Web Store
+Step 2: Install the browser extension from the Chrome Web Store (https://chrome.google.com/webstore/detail/chrome2glass/khdaampnoedgchmgickhmdfiffedldij)
 Step 3: Click on the extension's icon to sign in; note that you don't have to authorize the
 extension to access your timeline, that is handled on the server.
 Step 4: Right click on links, media or text selections to get a context menu that sends content
