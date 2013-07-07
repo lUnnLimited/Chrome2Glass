@@ -44,8 +44,7 @@ function sendItem ( item ) {
        'parameters': {
          'operation': 'insertItem',
          'message': item.message,
-         'imageUrl': item.imageUrl,
-         'contentType': item.contentType
+         'imageUrl': item.imageUrl
        }
      }
    );
@@ -73,7 +72,7 @@ chrome.browserAction.onClicked.addListener( openStatusPage );
 
 // Callback function for the contextual menu for media ( images, video or audio )
 function mediaHandler ( info, tab ) {
-  sendItem( { 'imageUrl': info.srcUrl, 'contentType': info.mediaType + "/" + info.srcUrl.split( '.' ).pop() } );
+  sendItem( { 'imageUrl': info.srcUrl } );
 }
 
 // Callback function for the contextual menu for text selection

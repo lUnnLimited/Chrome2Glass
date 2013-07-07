@@ -34,6 +34,8 @@ import com.google.common.io.ByteStreams;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.logging.Logger;
 
 /**
@@ -154,10 +156,9 @@ public class MirrorClient {
    * @param attachmentInputStream input stream for the attachment (or null if
    *        none)
    */
-  public static void insertTimelineItem(Credential credential, TimelineItem item,
-      String attachmentContentType, InputStream attachmentInputStream) throws IOException {
-    insertTimelineItem(credential, item, attachmentContentType,
-        ByteStreams.toByteArray(attachmentInputStream));
+  public static void insertTimelineItem(Credential credential, TimelineItem item, URL url) throws IOException {
+	  URLConnection connection = url.openConnection();	  
+	  insertTimelineItem(credential, item, connection.getHeaderField("content-type"), ByteStreams.toByteArray(connection.getInputStream()));
   }
 
   public static InputStream getAttachmentInputStream(Credential credential, String timelineItemId,

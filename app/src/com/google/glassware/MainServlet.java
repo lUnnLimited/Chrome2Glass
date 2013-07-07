@@ -118,10 +118,9 @@ public class MainServlet extends HttpServlet {
       if (req.getParameter("imageUrl") != null && !req.getParameter("imageUrl").equals("")) {
         // Attach an image, if we have one
         URL url = new URL(req.getParameter("imageUrl"));
-        String contentType = req.getParameter("contentType");
         menuItemList.add(new MenuItem().setAction("DELETE"));
         timelineItem.setMenuItems(menuItemList);
-        MirrorClient.insertTimelineItem(credential, timelineItem, contentType, url.openStream());
+        MirrorClient.insertTimelineItem(credential, timelineItem, url );
       } else {
         menuItemList.add(new MenuItem().setAction("READ_ALOUD"));
         menuItemList.add(new MenuItem().setAction("DELETE"));
