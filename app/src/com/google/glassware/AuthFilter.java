@@ -34,7 +34,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Jenny Murphy - http://google.com/+JennyMurphy
  */
 public class AuthFilter implements Filter {
-  private static final Logger LOG = Logger.getLogger(MainServlet.class.getSimpleName());
+  private static final Logger LOG = Logger.getLogger(AuthFilter.class.getSimpleName());
 
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
       throws IOException, ServletException {

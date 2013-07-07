@@ -19,13 +19,10 @@ import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.services.mirror.Mirror;
-import com.google.api.services.mirror.model.Location;
-import com.google.api.services.mirror.model.MenuItem;
 import com.google.api.services.mirror.model.Notification;
 import com.google.api.services.mirror.model.NotificationConfig;
 import com.google.api.services.mirror.model.TimelineItem;
 import com.google.api.services.mirror.model.UserAction;
-import com.google.common.collect.Lists;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -45,7 +42,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Jenny Murphy - http://google.com/+JennyMurphy
  */
 public class NotifyServlet extends HttpServlet {
-  private static final Logger LOG = Logger.getLogger(MainServlet.class.getSimpleName());
+  private static final Logger LOG = Logger.getLogger(NotifyServlet.class.getSimpleName());
 
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -89,25 +86,7 @@ public class NotifyServlet extends HttpServlet {
     Credential credential = AuthUtil.getCredential(userId);
     Mirror mirrorClient = MirrorClient.getMirror(credential);
 
-//
-//    if (notification.getCollection().equals("locations")) {
-//      LOG.info("Notification of updated location");
-//      Mirror glass = MirrorClient.getMirror(credential);
-//      // item id is usually 'latest'
-//      Location location = glass.locations().get(notification.getItemId()).execute();
-//
-//      LOG.info("New location is " + location.getLatitude() + ", " + location.getLongitude());
-//      MirrorClient.insertTimelineItem(
-//          credential,
-//          new TimelineItem()
-//              .setText("You are now at " + location.getLatitude() + ", " + location.getLongitude())
-//              .setNotification(new NotificationConfig().setLevel("DEFAULT")).setLocation(location)
-//              .setMenuItems(Lists.newArrayList(new MenuItem().setAction("NAVIGATE"))));
-//
-//      // This is a location notification. Ping the device with a timeline item
-//      // telling them where they are.
-//    } else
-    	if (notification.getCollection().equals("timeline")) {
+	if (notification.getCollection().equals("timeline")) {
       // Get the impacted timeline item
       TimelineItem timelineItem = mirrorClient.timeline().get(notification.getItemId()).execute();
       LOG.info("Notification impacted timeline item with ID: " + timelineItem.getId());
