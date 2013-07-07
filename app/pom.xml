@@ -39,10 +39,15 @@ limitations under the License.
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-mirror</artifactId>
-      <version>v1-rev2-1.14.1-beta</version>
+      <version>v1-rev11-1.15.0-rc</version>
+    </dependency>
+	<dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client-jackson2</artifactId>
+      <version>1.15.0-rc</version>
     </dependency>
 
-    <!-- App Engine -->
+	<!-- App Engine -->
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-api-1.0-sdk</artifactId>
