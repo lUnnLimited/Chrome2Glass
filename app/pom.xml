@@ -34,7 +34,7 @@ limitations under the License.
     <dependency>
       <groupId>com.google.api-client</groupId>
       <artifactId>google-api-client-appengine</artifactId>
-      <version>1.14.1-beta</version>
+      <version>1.15.0-rc</version>
     </dependency>
     <dependency>
       <groupId>com.google.apis</groupId>
