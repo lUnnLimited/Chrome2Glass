@@ -91,29 +91,29 @@ public class NotifyServlet extends HttpServlet {
       TimelineItem timelineItem = mirrorClient.timeline().get(notification.getItemId()).execute();
       LOG.info("Notification impacted timeline item with ID: " + timelineItem.getId());
 
-      // If it was a share, and contains a photo, bounce it back to the user.
-      if (notification.getUserActions().contains(new UserAction().setType("SHARE"))
-          && timelineItem.getAttachments() != null && timelineItem.getAttachments().size() > 0) {
-        LOG.info("It was a share of a photo. Sending the photo back to the user.");
-
-        // Get the first attachment
-        String attachmentId = timelineItem.getAttachments().get(0).getId();
-        LOG.info("Found attachment with ID " + attachmentId);
-
-        // Get the attachment content
-        InputStream stream =
-            MirrorClient.getAttachmentInputStream(credential, timelineItem.getId(), attachmentId);
-
-        // Create a new timeline item with the attachment
-        TimelineItem echoPhotoItem = new TimelineItem();
-        echoPhotoItem.setNotification(new NotificationConfig().setLevel("DEFAULT"));
-        echoPhotoItem.setText("Echoing your shared photo");
-
-        MirrorClient.insertTimelineItem(credential, echoPhotoItem, "image/jpeg", stream);
-
-      } else {
-        LOG.warning("I don't know what to do with this notification, so I'm ignoring it.");
-      }
+//      // If it was a share, and contains a photo, bounce it back to the user.
+//      if (notification.getUserActions().contains(new UserAction().setType("SHARE"))
+//          && timelineItem.getAttachments() != null && timelineItem.getAttachments().size() > 0) {
+//        LOG.info("It was a share of a photo. Sending the photo back to the user.");
+//
+//        // Get the first attachment
+//        String attachmentId = timelineItem.getAttachments().get(0).getId();
+//        LOG.info("Found attachment with ID " + attachmentId);
+//
+//        // Get the attachment content
+//        InputStream stream =
+//            MirrorClient.getAttachmentInputStream(credential, timelineItem.getId(), attachmentId);
+//
+//        // Create a new timeline item with the attachment
+//        TimelineItem echoPhotoItem = new TimelineItem();
+//        echoPhotoItem.setNotification(new NotificationConfig().setLevel("DEFAULT"));
+//        echoPhotoItem.setText("Echoing your shared photo");
+//
+//        MirrorClient.insertTimelineItem(credential, echoPhotoItem, "image/jpeg", stream);
+//
+//      } else {
+//        LOG.warning("I don't know what to do with this notification, so I'm ignoring it.");
+//      }
     }
   }
 }
