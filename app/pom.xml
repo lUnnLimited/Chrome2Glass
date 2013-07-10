@@ -18,8 +18,8 @@ limitations under the License.
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google</groupId>
-  <artifactId>glass-java-starter</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <artifactId>Chrome2Glass</artifactId>
+  <version>2</version>
 
   <repositories>
     <repository>
@@ -41,62 +41,18 @@ limitations under the License.
       <artifactId>google-api-services-mirror</artifactId>
       <version>v1-rev11-1.15.0-rc</version>
     </dependency>
-	<dependency>
+    <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client-jackson2</artifactId>
       <version>1.15.0-rc</version>
     </dependency>
 
-	<!-- App Engine -->
-    <dependency>
-      <groupId>com.google.appengine</groupId>
-      <artifactId>appengine-api-1.0-sdk</artifactId>
-      <version>1.8.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.appengine</groupId>
-      <artifactId>appengine-api-labs</artifactId>
-      <version>1.8.1</version>
-    </dependency>
-
-    <!-- everything else -->
-    <dependency>
-      <groupId>org.codehaus.jackson</groupId>
-      <artifactId>jackson-core-asl</artifactId>
-      <version>1.9.11</version>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.jackson</groupId>
-      <artifactId>jackson-mapper-asl</artifactId>
-      <version>1.9.11</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>1.1.2</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-codec</groupId>
-      <artifactId>commons-codec</artifactId>
-      <version>1.7</version>
-    </dependency>
+    <!-- Google Guava -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
       <version>14.0.1</version>
     </dependency>
-
-
   </dependencies>
 
   <build>
