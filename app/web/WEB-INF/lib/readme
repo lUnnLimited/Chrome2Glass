@@ -1,1 +1,1 @@
-Run maven ( `mvn compile` ) from the app directory to populate the jars needed here
+Use maven ( `mvn dependency:copy-dependencies -DoutputDirectory=web/WEB-INF/lib/` ) from the app directory to populate the jars needed here. Note that `mvn compile` isn't going to work because App Engine jars are being managed by Eclipse through the Google App Engine plugin.
