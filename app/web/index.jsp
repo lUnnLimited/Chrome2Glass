@@ -16,10 +16,8 @@ limitations under the License.
 <%@ page import="com.google.api.client.auth.oauth2.Credential" %>
 <%@ page import="com.google.glassware.MirrorClient" %>
 <%@ page import="com.google.glassware.WebUtil" %>
-<%@ page
-    import="java.util.List" %>
+<%@ page import="java.util.List" %>
 <%@ page import="com.google.api.services.mirror.model.TimelineItem" %>
-<%@ page import="com.google.api.services.mirror.model.Subscription" %>
 <%@ page import="com.google.api.services.mirror.model.Attachment" %>
 <%@ page import="com.google.glassware.MainServlet" %>
 
@@ -32,23 +30,7 @@ limitations under the License.
 
   Credential credential = com.google.glassware.AuthUtil.getCredential(userId);
 
-  List<TimelineItem> timelineItems = MirrorClient.listItems(credential, 3L).getItems();
-
-  List<Subscription> subscriptions = MirrorClient.listSubscriptions(credential).getItems();
-  boolean timelineSubscriptionExists = false;
-  boolean locationSubscriptionExists = false;
-
-  if (subscriptions != null) {
-    for (Subscription subscription : subscriptions) {
-      if (subscription.getId().equals("timeline")) {
-        timelineSubscriptionExists = true;
-      }
-      if (subscription.getId().equals("locations")) {
-        locationSubscriptionExists = true;
-      }
-    }
-  }
-
+  List<TimelineItem> timelineItems = MirrorClient.listItems(credential, 3L).getItems();  
 %>
 <html>
 <head>
@@ -132,20 +114,6 @@ limitations under the License.
       } %>
     </div>
     <div style="clear:both;"></div>
-  </div>
-
-  <!-- Example row of columns -->
-  <div class="row">
-    <div class="span4">
-      <h2>Timeline</h2>
-
-      <p>When you first sign in, this Glassware inserts a welcome message. Use
-        these controls to manually insert more items into your timeline. Learn more about
-        the timeline APIs
-        <a href="https://developers.google.com/glass/timeline">here</a>
-      </p>
-    </div>
-
   </div>
 </div>
 
